@@ -10,11 +10,11 @@ const router = express.Router();
 
 
 
-router.get('/search', searchFlight);
+router.get('/filter', searchFlight);
 
 router.get('/', getAllFlights);
 
-router.get('/:id', getFlightById);
+router.get('/:flightId', getFlightById);
 
 
 

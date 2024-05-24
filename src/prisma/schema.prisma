@@ -23,11 +23,11 @@ model User {
 
 
 model Flight {
-  id            Int      @id @default(autoincrement())
-  description   String
-  departureTime DateTime
-  arrivalTime   DateTime
-  from          String
-  to            String
-  flightClass         String
+  flightId            Int      @id @default(autoincrement())
+  flightDesc   String
+  takeoffTime String
+  landingTime   String
+  takeoffPlace          String
+  landingPlace            String
+  ticketClass         String
 }

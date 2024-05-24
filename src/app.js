@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api', userRoutes);
-app.use('/flights', flightRoutes);
+app.use('/trips', flightRoutes);
 
 
 const server = app.listen(PORT, async () => {

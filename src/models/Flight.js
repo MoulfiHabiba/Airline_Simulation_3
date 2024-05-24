@@ -1,13 +1,19 @@
 import prisma from '../prisma.js';
 
-export const searchFlight = async ({ from, to, departureTime, arrivalTime, flightClass }) => {
+export const searchFlight = async ({ 
+  takeoffTime ,
+  landingTime ,
+  takeoffPlace,
+  landingPlace ,
+  ticketClass ,
+}) => {
   const filters = {};
 
-  if (from) filters.from = from;
-  if (to) filters.to = to;
-  if (departureTime) filters.departureTime = new Date(departureTime);
-  if (arrivalTime) filters.arrivalTime = new Date(arrivalTime);
-  if (flightClass) filters.flightClass = flightClass;
+  if (takeoffPlace) filters.takeoffPlace = takeoffPlace;
+  if (landingPlace) filters.landingPlace = landingPlace;
+  if (takeoffTime) filters.takeoffTime = {contains: takeoffTime};
+  if (landingTime) filters.landingTime = {contains: landingTime};
+  if (ticketClass) filters.ticketClass = ticketClass;
 
   return await prisma.flight.findMany({
     where: {
@@ -22,6 +28,9 @@ export const getAllFlights = async () => {
     return await prisma.flight.findMany();
   };
   
-  export const getFlightById = async (id) => {
-    return await prisma.flight.findUnique({ where: { id } });
+  export const getFlightById = async (flightId) => {
+    const flight =  await prisma.flight.findUnique({ where: { flightId } });
+    console.log(flight);
+
+    return await prisma.flight.findUnique({ where: { flightId } });
   };

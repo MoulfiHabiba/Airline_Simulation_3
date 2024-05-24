@@ -30,4 +30,5 @@ model Flight {
   takeoffPlace          String
   landingPlace            String
   ticketClass         String
+  ticketPrice   Float
 }

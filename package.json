@@ -5,7 +5,7 @@
     "main": "src/app.js",
     "type": "module",
     "prisma": {
-        "schema": "path/to/your/schema.prisma"
+        "schema": "src/prisma/schema.prisma"
     },
     "scripts": {
     "start": "node src/app.js",

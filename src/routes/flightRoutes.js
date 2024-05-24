@@ -2,13 +2,15 @@ import express from 'express';
 import {
     searchFlight,
     getFlightById,
-    getAllFlights
+    getAllFlights,
+    createFlight
 } from '../controllers/flightController.js';
 
 const router = express.Router();
 
 
 
+router.post('/addFlights', createFlight);
 
 router.get('/filter', searchFlight);
 

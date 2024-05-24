@@ -1,5 +1,17 @@
 import * as flightModel from '../models/Flight.js';
 
+
+
+export const createFlight = async (req, res) => {
+  try {
+    const { flights } = req.body;
+    const createdFlights = await flightModel.createFlights(flights);
+    res.json(createdFlights);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 export const searchFlight = async (req, res) => {
   try {
     const query = req.query; // Changed from req.params to req.query for query parameters

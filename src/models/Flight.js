@@ -1,5 +1,18 @@
 import prisma from '../prisma.js';
 
+export const createFlights = async (flightsData) => {
+  const createdFlights = [];
+
+  for (const data of flightsData) {
+    const createdFlight = await prisma.flight.create({ data });
+    createdFlights.push(createdFlight);
+  }
+
+  return createdFlights;
+};
+
+
+
 export const searchFlight = async ({ 
   takeoffTime ,
   landingTime ,
@@ -29,8 +42,5 @@ export const getAllFlights = async () => {
   };
   
   export const getFlightById = async (flightId) => {
-    const flight =  await prisma.flight.findUnique({ where: { flightId } });
-    console.log(flight);
-
     return await prisma.flight.findUnique({ where: { flightId } });
   };

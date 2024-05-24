@@ -4,6 +4,9 @@
     "description": "CRUD application with Node.js, Prisma, and SQLite",
     "main": "src/app.js",
     "type": "module",
+    "prisma": {
+        "schema": "path/to/your/schema.prisma"
+    },
     "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"

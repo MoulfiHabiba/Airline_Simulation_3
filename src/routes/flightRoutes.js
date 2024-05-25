@@ -12,11 +12,11 @@ const router = express.Router();
 
 router.post('/addFlights', createFlight);
 
-router.get('/filter', searchFlight);
+router.get('/find', searchFlight);
 
 router.get('/', getAllFlights);
 
-router.get('/:flightId', getFlightById);
+router.get('/:flight_id', getFlightById);
 
 
 

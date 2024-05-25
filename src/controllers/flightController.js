@@ -33,7 +33,7 @@ export const getAllFlights = async (req, res) => {
   
   export const getFlightById = async (req, res) => {
     try {
-      const flight = await flightModel.getFlightById(parseInt(req.params.flightId));
+      const flight = await flightModel.getFlightById(parseInt(req.params.flight_id));
       if (!flight) {
         return res.status(404).json({ error: 'flight not found' });
       }

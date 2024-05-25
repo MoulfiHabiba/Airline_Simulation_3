@@ -23,12 +23,12 @@ model User {
 
 
 model Flight {
-  flightId            Int      @id @default(autoincrement())
-  flightDesc   String
-  takeoffTime String
-  landingTime   String
-  takeoffPlace          String
-  landingPlace            String
-  ticketClass         String
-  ticketPrice   Float
+  flight_id            Int      @id @default(autoincrement())
+  flight_desc   String
+  takeoff_time String
+  landing_time   String
+  takeoff_place          String
+  landing_place            String
+  ticket_class         String
+  ticket_price   Float
 }

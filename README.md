@@ -1,6 +1,7 @@
 # Fake airline API 3
 
-Service registery of a flight reservation system under software architectures course
+Fake airline APIs of a flight reservation system under software architectures course
+
 
 ## Documentation
 
